@@ -29,12 +29,14 @@ def zad1_3() -> None:
 
 
 def zad1_4() -> None:
+    print('### ZAD 4 ###')
     my_car = Car(20, 40)
     my_car.add_fuel(30)
     my_car.drive(100)
 
 
 def zad1_5() -> None:
+    print('### ZAD 5 ###')
     my_student = Student('Szymon', 'Śliwa')
     print(my_student.get_name())
     my_student.add_quizz(20)
