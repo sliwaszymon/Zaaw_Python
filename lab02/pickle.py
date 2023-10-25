@@ -21,7 +21,6 @@ class NamedPoint(Point):
     nazwa: str
 
     def __init__(self, x: float, y: float, nazwa: str) -> None:
-        # Point.__init__(self, x, y)
         super().__init__(x, y)
         self.nazwa = nazwa
 
