@@ -30,7 +30,7 @@ class Wymierna:
             return Wymierna(self._p * other.get_mianownik() + other.get_licznik() * self._q,
                             self._q * other.get_mianownik())
         else:
-            raise Exception('Substraction object is not instance of int or Wymierna')
+            raise Exception('Object is not instance of int or Wymierna')
 
     def __sub__(self, other: int | object) -> object:
         if isinstance(other, int):
@@ -40,6 +40,71 @@ class Wymierna:
                             self._q * other.get_mianownik())
         else:
             raise Exception('Substraction object is not instance of int or Wymierna')
+
+    def __eq__(self, other):
+        if isinstance(other, int) or isinstance(other, float):
+            return float(self) == (other / 1)
+        if isinstance(other, Wymierna):
+            # return (self._p == other.get_licznik()) and (self._q == other.get_mianownik())
+            return not (self < other) and not (other < self)
+        else:
+            raise Exception('Object is not instance of int, float or Wymierna')
+
+    def __ne__(self, other):
+        if isinstance(other, int) or isinstance(other, float):
+            return float(self) != (other / 1)
+        if isinstance(other, Wymierna):
+            return (self._p != other.get_licznik()) or (self._q != other.get_mianownik())
+        else:
+            raise Exception('Object is not instance of int, float or Wymierna')
+
+    def __lt__(self, other):
+        if isinstance(other, int) or isinstance(other, float):
+            return float(self) < (other / 1)
+        if isinstance(other, Wymierna):
+            return float(self) < float(other)
+        else:
+            raise Exception('Object is not instance of int, float or Wymierna')
+
+    def __le__(self, other):
+        if isinstance(other, int) or isinstance(other, float):
+            return float(self) <= (other / 1)
+        if isinstance(other, Wymierna):
+            return float(self) <= float(other)
+        else:
+            raise Exception('Object is not instance of int, float or Wymierna')
+
+    def __gt__(self, other):
+        if isinstance(other, int) or isinstance(other, float):
+            return float(self) > (other / 1)
+        if isinstance(other, Wymierna):
+            return float(self) > float(other)
+        else:
+            raise Exception('Object is not instance of int, float or Wymierna')
+
+    def __ge__(self, other):
+        if isinstance(other, int) or isinstance(other, float):
+            return float(self) >= (other / 1)
+        if isinstance(other, Wymierna):
+            return float(self) >= float(other)
+        else:
+            raise Exception('Object is not instance of int, float or Wymierna')
+
+    def __mul__(self, other):
+        if isinstance(other, int):
+            return Wymierna(self._p * other, self._q)
+        if isinstance(other, Wymierna):
+            return Wymierna(self._p * other.get_licznik(), self._q * other.get_mianownik())
+        else:
+            raise Exception('Object is not instance of int or Wymierna')
+
+    def __truediv__(self, other):
+        if isinstance(other, int):
+            return Wymierna(self._p, self._q * other)
+        if isinstance(other, Wymierna):
+            return Wymierna(self._p * other.get_mianownik(), self._q * other.get_licznik())
+        else:
+            raise Exception('Object is not instance of int or Wymierna')
 
     @staticmethod
     def nwd(a: int, b: int) -> int:

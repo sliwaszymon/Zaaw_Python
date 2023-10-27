@@ -30,7 +30,7 @@ print(my_car.get_fuel_level()) # Wydrukuj ilość pozostałego paliwa
 
     W funkcji **```main```** wczytaj licznik i mianownik dla dwóch liczb wymiernych, utwórz z wczytanych liczb dwie liczby wymierne, a następnie wypisz w kolejnych liniach wyniki uzyskane z zastosowania zdefiniowanych operatorów.
 
-2. Rozszerz definicję klasy z poprzedniego zadania poprzez zdefiniowanie funkcji składowych **```__mul__```** oraz **```__div__```**.
+2. Rozszerz definicję klasy z poprzedniego zadania poprzez zdefiniowanie funkcji składowych **```__mul__```** oraz **```__div__```** - **zakładam, że tu chodzi o ```__truediv__```**.
 
 3. Zaimplementuj funkcję **```__eq__```** w sposób wykorzystujący fakt, iż dwie liczby są równe, wtedy i tylko wtedy, gdy żadna z nich nie jest mniejsza od drugiej.
 
